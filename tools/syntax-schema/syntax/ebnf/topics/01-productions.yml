@@ -115,16 +115,16 @@
 # Tokens
 
 - name: EOF
-  is_token: true
+  isToken: true
   terminal: $
 
 - name: Number
-  is_token: true
+  isToken: true
   oneOrMore:
     range: { from: "0", to: "9" }
 
 - name: String
-  is_token: true
+  isToken: true
   sequence:
     - terminal: "'"
     - zeroOrMore:
@@ -132,7 +132,7 @@
     - terminal: "'"
 
 - name: StringChar
-  is_token: true
+  isToken: true
   config: { nomap: true }
   choice:
     - not:
@@ -154,7 +154,7 @@
                 - terminal: "}"
 
 - name: SingleCharString
-  is_token: true
+  isToken: true
   config: { nomap: true }
   sequence:
     - terminal: "'"
@@ -162,7 +162,7 @@
     - terminal: "'"
 
 - name: HexDigit
-  is_token: true
+  isToken: true
   config: { nomap: true }
   choice:
     - range:
@@ -176,7 +176,7 @@
         to: F
 
 - name: Identifier
-  is_token: true
+  isToken: true
   config: { nomap: true }
   choice:
     - sequence:
@@ -189,14 +189,14 @@
 
 - name: RawIdentifier
   config: { chain: true }
-  is_token: true
+  isToken: true
   sequence:
     - reference: IdentifierStart
     - zeroOrMore:
         reference: IdentifierFollow
 
 - name: IdentifierStart
-  is_token: true
+  isToken: true
   config: { nomap: true }
   choice:
     - terminal: _
@@ -208,7 +208,7 @@
         to: Z
 
 - name: IdentifierFollow
-  is_token: true
+  isToken: true
   config: { nomap: true }
   choice:
     - reference: IdentifierStart
@@ -217,7 +217,7 @@
         to: "9"
 
 - name: IGNORE
-  is_token: true
+  isToken: true
   config: { ignore: true }
   zeroOrMore:
     choice:
@@ -225,7 +225,7 @@
       - reference: Comment
 
 - name: Comment
-  is_token: true
+  isToken: true
   config: { ignore: true }
   sequence:
     - terminal: /*
@@ -247,7 +247,7 @@
     - terminal: /
 
 - name: Whitespace
-  is_token: true
+  isToken: true
   config: { ignore: true }
   choice:
     - terminal: "\t"
