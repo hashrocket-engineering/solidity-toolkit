@@ -17,9 +17,6 @@ fn main() {
     println!(" => Loading Manifest");
     let grammar = Grammar::from_manifest(&PathBuf::from(args.manifest_input));
 
-    println!(" => Validating Grammar");
-    grammar.validate();
-
     println!(" => Generating Specification");
     grammar.generate_spec(&PathBuf::from(args.documentation_folder));
 }
