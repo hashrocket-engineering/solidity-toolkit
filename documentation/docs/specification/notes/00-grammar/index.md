@@ -1,5 +1,5 @@
-<!-- markdownlint-disable first-line-h1 -->
+<!-- markdownlint-configure-file { "first-line-heading": { "level": 2 } } -->
 
 ## About The Grammar
 
---8<-- "specification/notes/under-construction-snippet.md"
+--8<-- "snippets/under-construction.md"
