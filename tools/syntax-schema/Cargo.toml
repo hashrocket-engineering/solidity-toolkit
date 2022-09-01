@@ -24,3 +24,4 @@ serde = { version = "1.0.137", features = ["derive", "rc"] }
 serde_json = "1.0.81"
 serde_yaml = "0.8.24"
 codegen = { path = "../../code-analysis/crates/codegen" }
+ebnf_parser = { path = "../../code-analysis/crates/parsers/ebnf" }
