@@ -1,32 +1,19 @@
 #!/bin/bash
 set -euo pipefail
 
-THIS_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
-
 # shellcheck source=/dev/null
-source "$THIS_DIR/common.sh"
+source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
 
 (
   # Run setup first
-  "$THIS_DIR/setup.sh"
-)
-
-declare -a rust_flags=(
-  "${RUSTFLAGS:-}"
-  "--warn unused_crate_dependencies"
-  "--deny warnings"
+  "$REPO_ROOT/code-analysis/scripts/setup.sh"
 )
 
 (
   printf "\n\n🧪 Checking Project 🧪\n\n\n"
-  cd "$PROJECT_DIR"
 
-  export RUSTFLAGS="${rust_flags[*]}"
-  export SLANG_CODEGEN_CHECK_ONLY="true"
-
+  cd "$REPO_ROOT/code-analysis"
   cargo check --offline --all --all-targets
-  cargo test --no-fail-fast --offline --all --all-targets
-  cargo fmt --check --all
-)
 
-printf "\n\n✅ Check Success ✅\n\n\n"
+  printf "\n\n✅ Check Success ✅\n\n\n"
+)
