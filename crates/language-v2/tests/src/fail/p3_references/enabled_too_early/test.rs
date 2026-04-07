@@ -16,15 +16,15 @@ language_v2_macros::compile!(Language(
                         fields = (
                             field_1 = Optional(
                                 reference = Two,
-                                enabled = Range(from = "2.0.0", till = "3.0.0")
+                                enabled = Range(from = "3.0.0", till = "4.0.0")
                             ),
                             field_2 = Optional(reference = Three)
                         )
                     ),
                     Struct(
                         name = Two,
-                        enabled = Range(from = "2.0.0", till = "3.0.0"),
-                        fields = (field_1 = Optional(reference = Three, enabled = From("1.0.0")))
+                        enabled = Range(from = "3.0.0", till = "4.0.0"),
+                        fields = (field_1 = Optional(reference = Three, enabled = From("2.0.0")))
                     ),
                     Token(name = Three, scanner = Atom("three"))
                 ]
