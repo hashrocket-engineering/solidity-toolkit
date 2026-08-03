@@ -1,12 +1,4 @@
-# slang
-
-<!-- _PRODUCT_README_ (keep in sync) -->
-
-[![release](https://img.shields.io/github/v/tag/NomicFoundation/slang?label=GitHub%20Release&logo=github&sort=semver&logoColor=white)](https://github.com/NomicFoundation/slang/releases)
-[![npm](https://img.shields.io/npm/v/@nomicfoundation/slang?label=NPM%20Package&logo=npm&logoColor=white)](https://www.npmjs.com/package/@nomicfoundation/slang)
-[![cargo](https://img.shields.io/crates/v/slang_solidity?label=Rust%20Crate&logo=rust&logoColor=white)](https://crates.io/crates/slang_solidity)
-
-## Solidity compiler tooling by [@NomicFoundation](https://github.com/NomicFoundation)
+## Solidity compiler tooling
 
 A modular set of compiler APIs empowering the next generation of Solidity code analysis and developer tooling.
 Written in Rust and distributed in multiple languages.
@@ -17,11 +9,10 @@ Slang analyzes Solidity source code and generates a rich concrete syntax tree (C
 
 The Solidity programming language has evolved quite a bit since its inception. Some features were introduced, some changed, while some eventually became obsolete and were removed altogether. Developer tooling must be able to understand and consume older contracts that are still being used on the blockchain, written in older versions of Solidity.
 
-Because of that, Slang must be able to reason about different versions of Solidity; how the language grammar, name capture rules, and semantics have changed across different versions. One of our goals is to document differences as part of our [Solidity Grammar](https://nomicfoundation.github.io/slang/latest/solidity-grammar/).
+Because of that, Slang must be able to reason about different versions of Solidity; how the language grammar, name capture rules, and semantics have changed across different versions. One of our goals is to document differences as part of our Solidity Grammar
 
 This is why, instead of having to download separate versions of Slang for each Solidity version, you specify the Solidity version that you want to work with when you use the Slang language APIs.
 
-- [See our supported versions.](https://nomicfoundation.github.io/slang/latest/solidity-grammar/supported-versions/)
 
 ## Installation
 
