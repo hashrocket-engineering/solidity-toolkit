@@ -1,15 +1,17 @@
-## Solidity compiler tooling
+# Phantom — Solidity Compiler Tooling
 
-A modular set of compiler APIs empowering the next generation of Solidity code analysis and developer tooling.
-Written in Rust and distributed in multiple languages.
+A modular compiler infrastructure designed to power advanced Solidity code analysis and next-generation developer tooling.
 
-raisi analyzes Solidity source code and generates a rich concrete syntax tree (CST) that can be reasoned about. This is a departure from the classic approach of "black-box" compilers, which are handed the input and only their output can be observed.
+Built in Rust and distributed through multiple language interfaces, Phantom provides a structured way to parse, inspect, and reason about Solidity source code.
 
-### Supporting Multiple Solidity Versions
+Rather than treating compilation as a black-box process, Phantom analyzes Solidity source code and produces a rich Concrete Syntax Tree (CST). This exposes the underlying structure of smart contracts, giving developers and tooling systems deeper insight into the source code and enabling more sophisticated analysis.
 
-The Solidity programming language has evolved quite a bit since its inception. Some features were introduced, some changed, while some eventually became obsolete and were removed altogether. Developer tooling must be able to understand and consume older contracts that are still being used on the blockchain, written in older versions of Solidity.
+## Supporting Multiple Solidity Versions
 
-Because of that, raisi must be able to reason about different versions of Solidity; how the language grammar, name capture rules, and semantics have changed across different versions. One of our goals is to document differences as part of our Solidity Grammar
+Solidity has evolved significantly over time. New language features have been introduced, existing syntax and semantics have changed, and some functionality has eventually become deprecated or removed.
 
-This is why, instead of having to download separate versions of raisi for each Solidity version, you specify the Solidity version that you want to work with when you use the raisi language APIs.
+However, smart contracts deployed on blockchain networks remain in use long after their original development. Developer tools must therefore support not only the latest Solidity releases but also older language versions used by existing contracts.
 
+Phantom addresses this challenge by supporting version-aware Solidity parsing and analysis. It accounts for differences in language grammar, name resolution rules, and semantics across Solidity versions. These differences are also documented as part of the Solidity Grammar specification.
+
+Instead of maintaining separate Phantom installations for different Solidity releases, developers can specify the target Solidity version directly through the language APIs. This provides a consistent interface for working with contracts across multiple generations of the Solidity language.
